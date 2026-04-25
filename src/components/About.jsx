@@ -47,9 +47,9 @@ export function About() {
           whileHover={{ scale: 1.01 }}
         >
           <img
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80"
-            alt="Portrait style visual"
-            className="h-full w-full object-cover grayscale"
+            src="/profile-photo.png"
+            alt="Adarsh Gupta portrait"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,9,11,0.62)_0%,rgba(9,9,11,0.08)_55%)]" />
           <div className="absolute bottom-6 left-6 font-mono text-xs text-zinc-200">

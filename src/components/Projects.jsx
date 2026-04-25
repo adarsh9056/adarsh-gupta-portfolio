@@ -7,12 +7,49 @@ import { useGitHubRepos } from '../hooks/useGitHubRepos'
 
 export function Projects() {
   const [filter, setFilter] = useState('all')
-  const { findRepoUrl } = useGitHubRepos()
+  const { repos, findRepoUrl } = useGitHubRepos()
+
+  function categoryFromLanguage(language) {
+    const lang = (language || '').toLowerCase()
+    if (lang.includes('python')) return 'ml'
+    if (lang.includes('java') || lang.includes('c')) return 'systems'
+    if (lang.includes('javascript') || lang.includes('typescript') || lang.includes('html') || lang.includes('css')) {
+      return 'web'
+    }
+    return 'tools'
+  }
+
+  function repoNameFromUrl(url) {
+    if (!url) return ''
+    const name = url.split('/').pop() || ''
+    return name.toLowerCase()
+  }
+
+  const allProjects = useMemo(() => {
+    const existingRepoNames = new Set(
+      PROJECTS.map((project) => repoNameFromUrl(project.github)).filter(Boolean),
+    )
+
+    const githubOnlyProjects = repos
+      .filter((repo) => !existingRepoNames.has(repo.name.toLowerCase()))
+      .map((repo) => ({
+        id: `github-${repo.name.toLowerCase()}`,
+        title: repo.name.replace(/[-_]/g, ' '),
+        description: repo.description || 'Project sourced from my GitHub profile.',
+        tech: [repo.language || 'Code'],
+        category: categoryFromLanguage(repo.language),
+        github: repo.htmlUrl,
+        live: repo.homepage || null,
+        liveLabel: 'Live Demo',
+      }))
+
+    return [...PROJECTS, ...githubOnlyProjects]
+  }, [repos])
 
   const filtered = useMemo(() => {
-    if (filter === 'all') return PROJECTS
-    return PROJECTS.filter((p) => p.category === filter)
-  }, [filter])
+    if (filter === 'all') return allProjects
+    return allProjects.filter((p) => p.category === filter)
+  }, [filter, allProjects])
 
   function resolvedGithubUrl(project) {
     if (project.github) return project.github
