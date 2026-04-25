@@ -254,13 +254,13 @@ export const CERTIFICATIONS = [
   {
     title: 'Google Cloud Fundamentals',
     issuer: 'Google Cloud',
-    link: null,
-    linkPlaceholder: true,
+    link: 'https://drive.google.com/file/d/1SyxmBvVy4Uct2JnuqJpgqYKnKnpd7hV3/view',
+    linkPlaceholder: false,
   },
   {
     title: 'AWS Cloud Practitioner',
     issuer: 'Amazon Web Services',
-    link: null,
-    linkPlaceholder: true,
+    link: 'https://drive.google.com/file/d/1Fonun-Ch33zCXDP-rTrJzyFjZjWoS4Qy/view',
+    linkPlaceholder: false,
   },
 ]

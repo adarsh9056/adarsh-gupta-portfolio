@@ -93,7 +93,6 @@ export function Projects() {
         <AnimatePresence mode="popLayout">
           {filtered.map((project, idx) => {
             const ghUrl = resolvedGithubUrl(project)
-            const showGithubPlaceholder = project.githubPlaceholder && !ghUrl
             const showLive = project.live && !project.livePlaceholder
             const showLivePlaceholder = project.livePlaceholder && !project.live
 
@@ -113,9 +112,17 @@ export function Projects() {
                   <h3 className="text-xl font-semibold text-zinc-100 transition-colors group-hover:text-zinc-200">
                     {project.title}
                   </h3>
-                  <span className="shrink-0 rounded bg-zinc-950 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-zinc-300 ring-1 ring-white/10">
-                    {project.category}
-                  </span>
+                  {ghUrl ? (
+                    <a
+                      href={ghUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex shrink-0 items-center gap-1 rounded-md px-2 py-1 text-sm font-bold text-zinc-100 transition hover:text-white"
+                    >
+                      <FaGithub className="h-3.5 w-3.5 shrink-0" />
+                      GitHub
+                    </a>
+                  ) : null}
                 </div>
                 <p className="relative mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
                   {project.description}
@@ -131,22 +138,6 @@ export function Projects() {
                   ))}
                 </div>
                 <div className="relative mt-auto flex flex-wrap gap-4 border-t border-zinc-800 pt-4">
-                  {showGithubPlaceholder ? (
-                    <span className="inline-flex items-center gap-2 text-sm text-zinc-400">
-                      <FaGithub className="h-4 w-4 shrink-0" />
-                      Add your link here — GitHub
-                    </span>
-                  ) : (
-                    <a
-                      href={ghUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-zinc-200 transition hover:text-white"
-                    >
-                      <FaGithub className="h-4 w-4 shrink-0" />
-                      {project.githubLabel || 'GitHub'}
-                    </a>
-                  )}
                   {showLive ? (
                     <a
                       href={project.live}
