@@ -52,23 +52,23 @@ export function Contact({ sectionIndex = '07' }) {
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
         >
-          <p className="mb-8 max-w-md text-lg leading-relaxed text-slate-400">
+          <p className="mb-8 max-w-md text-lg leading-relaxed text-zinc-400">
             I’m open to internships, collaboration, and interesting product work. Prefer email — I
             typically reply within a day.
           </p>
           <div className="space-y-4">
             <a
               href={`mailto:${SITE.email}`}
-              className="flex items-center gap-3 text-[#ccd6f6] transition hover:text-sky-400"
+              className="flex items-center gap-3 text-zinc-100 transition hover:text-zinc-200"
             >
-              <HiOutlineMail className="h-6 w-6 text-sky-400" />
+              <HiOutlineMail className="h-6 w-6 text-zinc-300" />
               <span>{SITE.email}</span>
             </a>
             <a
               href={`tel:${SITE.phone.replace(/\s/g, '')}`}
-              className="flex items-center gap-3 text-[#ccd6f6] transition hover:text-sky-400"
+              className="flex items-center gap-3 text-zinc-100 transition hover:text-zinc-200"
             >
-              <HiOutlinePhone className="h-6 w-6 text-violet-400" />
+              <HiOutlinePhone className="h-6 w-6 text-zinc-300" />
               <span>{SITE.phone}</span>
             </a>
           </div>
@@ -76,7 +76,7 @@ export function Contact({ sectionIndex = '07' }) {
 
         <motion.form
           onSubmit={handleSubmit}
-          className="rounded-xl border border-[#233554] bg-[#112240]/50 p-6 backdrop-blur-sm md:p-8"
+          className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6 backdrop-blur-sm md:p-8"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -84,7 +84,7 @@ export function Contact({ sectionIndex = '07' }) {
           noValidate
         >
           <div className="mb-4">
-            <label htmlFor="name" className="mb-1 block font-mono text-xs text-sky-400">
+            <label htmlFor="name" className="mb-1 block font-mono text-xs text-zinc-300">
               Name
             </label>
             <input
@@ -92,13 +92,13 @@ export function Contact({ sectionIndex = '07' }) {
               name="name"
               value={values.name}
               onChange={handleChange}
-              className="w-full rounded-lg border border-[#233554] bg-[#0a192f]/80 px-4 py-3 text-[#ccd6f6] outline-none transition focus:border-sky-400/50"
+              className="w-full rounded-lg border border-zinc-700 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition focus:border-zinc-400/70"
               autoComplete="name"
             />
             {errors.name && <p className="mt-1 text-sm text-red-400">{errors.name}</p>}
           </div>
           <div className="mb-4">
-            <label htmlFor="email" className="mb-1 block font-mono text-xs text-sky-400">
+            <label htmlFor="email" className="mb-1 block font-mono text-xs text-zinc-300">
               Email
             </label>
             <input
@@ -107,13 +107,13 @@ export function Contact({ sectionIndex = '07' }) {
               type="email"
               value={values.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-[#233554] bg-[#0a192f]/80 px-4 py-3 text-[#ccd6f6] outline-none transition focus:border-sky-400/50"
+              className="w-full rounded-lg border border-zinc-700 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition focus:border-zinc-400/70"
               autoComplete="email"
             />
             {errors.email && <p className="mt-1 text-sm text-red-400">{errors.email}</p>}
           </div>
           <div className="mb-6">
-            <label htmlFor="message" className="mb-1 block font-mono text-xs text-sky-400">
+            <label htmlFor="message" className="mb-1 block font-mono text-xs text-zinc-300">
               Message
             </label>
             <textarea
@@ -122,18 +122,18 @@ export function Contact({ sectionIndex = '07' }) {
               rows={5}
               value={values.message}
               onChange={handleChange}
-              className="w-full resize-y rounded-lg border border-[#233554] bg-[#0a192f]/80 px-4 py-3 text-[#ccd6f6] outline-none transition focus:border-sky-400/50"
+              className="w-full resize-y rounded-lg border border-zinc-700 bg-zinc-950/80 px-4 py-3 text-zinc-100 outline-none transition focus:border-zinc-400/70"
             />
             {errors.message && <p className="mt-1 text-sm text-red-400">{errors.message}</p>}
           </div>
           <button
             type="submit"
-            className="w-full rounded-md bg-gradient-to-r from-sky-500 to-violet-600 py-3 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto sm:px-10"
+            className="w-full rounded-md bg-gradient-to-r from-zinc-700 to-zinc-500 py-3 text-sm font-semibold text-white transition hover:brightness-110 sm:w-auto sm:px-10"
           >
             Send message
           </button>
           {sent && (
-            <p className="mt-4 text-sm text-sky-400" role="status">
+            <p className="mt-4 text-sm text-zinc-300" role="status">
               Opening your mail app — thanks for reaching out!
             </p>
           )}

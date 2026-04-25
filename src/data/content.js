@@ -95,6 +95,55 @@ export const PROJECT_FILTERS = [
 
 export const PROJECTS = [
   {
+    id: 'service-sphere-ai-crm',
+    title: 'ServiceSphere AI CRM',
+    description:
+      'Production-minded CRM with GraphQL, Prisma, PostgreSQL, role-based access, worker-driven automations, and AI-assisted follow-ups.',
+    tech: ['React', 'Node.js', 'GraphQL', 'Prisma', 'PostgreSQL'],
+    category: 'fullstack',
+    github: 'https://github.com/adarsh9056/ServiceSphere-AI-CRM',
+  },
+  {
+    id: 'agentforce-ticket-router',
+    title: 'Agentforce AI Support Ticket Router',
+    description:
+      'Full-stack AI support routing platform with role-aware auth, telemetry analytics, and automated CI/CD deployment pipeline.',
+    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'OpenAI'],
+    category: 'fullstack',
+    github: 'https://github.com/adarsh9056/Agentforce-AI-Support-Ticket-Router',
+    live: 'https://agentforce-ai-support-ticket-router.vercel.app',
+    liveLabel: 'Live Demo',
+  },
+  {
+    id: 'tractor-predictive-maintenance',
+    title: 'AI-Based Tractor Predictive Maintenance',
+    description:
+      'End-to-end predictive maintenance system that classifies machine health bands, predicts failure type, and serves diagnosis APIs with an operations UI.',
+    tech: ['Python', 'FastAPI', 'scikit-learn', 'XGBoost', 'RAG'],
+    category: 'ml',
+    github: 'https://github.com/adarsh9056/AI_based_tractor-predictive-maintenance',
+    live: 'https://ai-based-tractor-predictive-mainten.vercel.app/',
+    liveLabel: 'Live Demo',
+  },
+  {
+    id: 'guardrail-gateway',
+    title: 'Guardrail Gateway',
+    description:
+      'Spring Boot microservice implementing Redis-backed concurrency guardrails and rate controls for bot/human interactions.',
+    tech: ['Java', 'Spring Boot', 'Redis', 'PostgreSQL', 'Docker'],
+    category: 'systems',
+    github: 'https://github.com/adarsh9056/guardrail-gateway',
+  },
+  {
+    id: 'secure-rbac-task-manager',
+    title: 'Secure RBAC Task Manager',
+    description:
+      'JWT-secured full-stack task manager with strict role-based authorization, validation, Swagger docs, and Dockerized local setup.',
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    category: 'fullstack',
+    github: 'https://github.com/adarsh9056/secure-rbac-task-manager',
+  },
+  {
     id: 'task-manager',
     title: 'Task Manager App',
     description:
@@ -167,8 +216,7 @@ export const PROJECTS = [
       'IoT-enabled smart farming solution — monitoring and automation to support crops; project work cited reduced locust impact by up to 50%.',
     tech: ['IoT', 'Cloud', 'Sensors', 'Data Pipeline'],
     category: 'iot',
-    github: null,
-    githubPlaceholder: true,
+    github: 'https://github.com/adarsh9056',
     live: null,
     livePlaceholder: true,
   },
@@ -180,7 +228,7 @@ export const PROJECTS = [
     tech: ['Lex', 'Yacc', 'Node.js', 'Parsing'],
     category: 'tools',
     github: 'https://github.com/adarsh9056',
-    githubLabel: 'GitHub (add specific repo)',
+    githubLabel: 'GitHub Profile',
     live: null,
     livePlaceholder: true,
   },

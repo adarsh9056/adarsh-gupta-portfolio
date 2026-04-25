@@ -51,7 +51,7 @@ export function Typewriter({ phrases }) {
   return (
     <span className="inline-block min-h-[1.2em]">
       {visible}
-      <span className="ml-0.5 inline-block h-[1em] w-0.5 translate-y-0.5 animate-pulse bg-violet-400 align-middle" />
+      <span className="ml-0.5 inline-block h-[1em] w-0.5 translate-y-0.5 animate-pulse bg-zinc-300 align-middle" />
     </span>
   )
 }

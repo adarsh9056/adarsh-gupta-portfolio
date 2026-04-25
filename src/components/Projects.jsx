@@ -43,8 +43,8 @@ export function Projects() {
             whileTap={{ scale: 0.97 }}
             className={`rounded-full px-4 py-2 font-mono text-xs transition ${
               filter === f.id
-                ? 'bg-gradient-to-r from-sky-500 to-violet-600 text-white shadow-lg shadow-violet-900/40'
-                : 'border border-[#233554] text-slate-400 hover:border-cyan-500/30 hover:text-cyan-200'
+                ? 'bg-gradient-to-r from-zinc-700 to-zinc-500 text-white shadow-lg shadow-black/40'
+                : 'border border-zinc-700 text-zinc-400 hover:border-zinc-500/60 hover:text-zinc-200'
             }`}
           >
             {f.label}
@@ -69,33 +69,33 @@ export function Projects() {
                 exit={{ opacity: 0, scale: 0.96 }}
                 transition={{ duration: 0.4, delay: idx * 0.04 }}
                 whileHover={{ y: -6 }}
-                className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-[#233554] bg-[#112240]/55 p-6 shadow-lg shadow-black/20 backdrop-blur-sm transition hover:border-sky-400/35 hover:shadow-sky-950/40"
+                className="group relative flex h-full flex-col overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900/55 p-6 shadow-lg shadow-black/20 backdrop-blur-sm transition hover:border-zinc-500/60 hover:shadow-black/40"
               >
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-sky-500/5 via-transparent to-violet-600/10 opacity-0 transition group-hover:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-zinc-300/8 via-transparent to-zinc-600/15 opacity-0 transition group-hover:opacity-100" />
                 <div className="relative mb-3 flex items-start justify-between gap-3">
-                  <h3 className="text-xl font-semibold text-[#ccd6f6] transition-colors group-hover:text-sky-300">
+                  <h3 className="text-xl font-semibold text-zinc-100 transition-colors group-hover:text-zinc-200">
                     {project.title}
                   </h3>
-                  <span className="shrink-0 rounded bg-[#0a192f] px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-violet-300/90 ring-1 ring-white/10">
+                  <span className="shrink-0 rounded bg-zinc-950 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-zinc-300 ring-1 ring-white/10">
                     {project.category}
                   </span>
                 </div>
-                <p className="relative mb-4 flex-1 text-sm leading-relaxed text-slate-400">
+                <p className="relative mb-4 flex-1 text-sm leading-relaxed text-zinc-400">
                   {project.description}
                 </p>
                 <div className="relative mb-6 flex flex-wrap gap-2">
                   {project.tech.map((t) => (
                     <span
                       key={t}
-                      className="rounded-md bg-[#0a192f]/90 px-2 py-1 font-mono text-xs text-cyan-200/90 ring-1 ring-cyan-500/15"
+                      className="rounded-md bg-zinc-950/90 px-2 py-1 font-mono text-xs text-zinc-300 ring-1 ring-zinc-500/20"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="relative mt-auto flex flex-wrap gap-4 border-t border-[#233554] pt-4">
+                <div className="relative mt-auto flex flex-wrap gap-4 border-t border-zinc-800 pt-4">
                   {showGithubPlaceholder ? (
-                    <span className="inline-flex items-center gap-2 text-sm text-amber-400/90">
+                    <span className="inline-flex items-center gap-2 text-sm text-zinc-400">
                       <FaGithub className="h-4 w-4 shrink-0" />
                       Add your link here — GitHub
                     </span>
@@ -104,7 +104,7 @@ export function Projects() {
                       href={ghUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-sky-400 transition hover:text-sky-300"
+                      className="inline-flex items-center gap-2 text-sm text-zinc-200 transition hover:text-white"
                     >
                       <FaGithub className="h-4 w-4 shrink-0" />
                       {project.githubLabel || 'GitHub'}
@@ -115,14 +115,14 @@ export function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm text-violet-300 transition hover:text-violet-200"
+                      className="inline-flex items-center gap-2 text-sm text-zinc-200 transition hover:text-white"
                     >
                       <FaExternalLinkAlt className="h-3.5 w-3.5 shrink-0" />
                       {project.liveLabel || 'Live'}
                     </a>
                   ) : null}
                   {showLivePlaceholder ? (
-                    <span className="inline-flex items-center gap-2 text-sm text-amber-400/90">
+                    <span className="inline-flex items-center gap-2 text-sm text-zinc-400">
                       <FaExternalLinkAlt className="h-3.5 w-3.5 shrink-0" />
                       Add your link here — Live
                     </span>

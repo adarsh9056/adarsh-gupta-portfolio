@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { SEO } from './components/SEO'
 import { LoadingScreen } from './components/LoadingScreen'
-import { AnimatedBackground } from './components/AnimatedBackground'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { About } from './components/About'
@@ -25,7 +24,6 @@ export default function App() {
   return (
     <>
       <SEO />
-      <AnimatedBackground />
       <LoadingScreen visible={loading} />
       <Navbar />
       <main>
