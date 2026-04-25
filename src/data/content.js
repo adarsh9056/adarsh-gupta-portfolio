@@ -94,6 +94,7 @@ export const EXPERIENCE = [
 export const PROJECT_FILTERS = [
   { id: 'all', label: 'All' },
   { id: 'fullstack', label: 'Full Stack' },
+  { id: 'java-spring', label: 'Java & Spring Boot' },
   { id: 'web', label: 'Web' },
   { id: 'ml', label: 'ML / AI' },
   { id: 'systems', label: 'Systems' },
@@ -139,7 +140,7 @@ export const PROJECTS = [
     description:
       'Spring Boot microservice implementing Redis-backed concurrency guardrails and rate controls for bot/human interactions.',
     tech: ['Java', 'Spring Boot', 'Redis', 'PostgreSQL', 'Docker'],
-    category: 'systems',
+    category: 'java-spring',
     github: 'https://github.com/adarsh9056/guardrail-gateway',
   },
   {

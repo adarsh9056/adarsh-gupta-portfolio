@@ -12,7 +12,8 @@ export function Projects() {
   function categoryFromLanguage(language) {
     const lang = (language || '').toLowerCase()
     if (lang.includes('python')) return 'ml'
-    if (lang.includes('java') || lang.includes('c')) return 'systems'
+    if (lang.includes('java')) return 'java-spring'
+    if (lang.includes('c')) return 'systems'
     if (lang.includes('javascript') || lang.includes('typescript') || lang.includes('html') || lang.includes('css')) {
       return 'web'
     }
