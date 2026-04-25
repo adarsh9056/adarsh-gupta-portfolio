@@ -7,8 +7,8 @@ export const SITE = {
   github: 'https://github.com/adarsh9056',
   linkedin: 'https://www.linkedin.com/in/adarsh-gta',
   githubUsername: 'adarsh9056',
-  resumePath: '/adarsh-gupta-resume.pdf',
-  resumeDownloadName: 'Adarsh_Gupta_Resume.pdf',
+  resumePath: '/Adarsh_gupta_resume_offcampus.pdf',
+  resumeDownloadName: 'Adarsh_gupta_resume_offcampus.pdf',
 }
 
 /** Sticky nav — smooth-scroll to section ids */

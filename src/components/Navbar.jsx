@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
-import { NAV_LINKS, SITE } from '../data/content'
+import { NAV_LINKS } from '../data/content'
 
 function scrollTo(id) {
   const el = document.getElementById(id)
@@ -56,15 +56,6 @@ export function Navbar() {
               </button>
             </li>
           ))}
-          <li>
-            <a
-              href={SITE.resumePath}
-              download={SITE.resumeDownloadName}
-              className="ml-2 rounded-full border border-zinc-300/60 bg-zinc-950/40 px-4 py-2 font-mono text-xs font-medium text-zinc-100 transition hover:bg-zinc-950/70"
-            >
-              Resume
-            </a>
-          </li>
         </ul>
 
         <button
@@ -101,15 +92,6 @@ export function Navbar() {
                   </button>
                 </li>
               ))}
-              <li className="pt-2">
-                <a
-                  href={SITE.resumePath}
-                  download={SITE.resumeDownloadName}
-                  className="inline-flex w-full items-center justify-center rounded-md bg-gradient-to-r from-zinc-700 to-zinc-500 px-4 py-3 text-sm font-medium text-white"
-                >
-                  Resume
-                </a>
-              </li>
             </ul>
           </motion.div>
         )}
