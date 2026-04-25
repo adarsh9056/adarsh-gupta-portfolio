@@ -65,21 +65,29 @@ export const SKILLS = [
 export const EXPERIENCE = [
   {
     role: 'Salesforce Developer Intern',
-    company: 'SmartBridge',
+    company: 'SmartBridge (Virtual)',
     period: 'May 2025 – Jul 2025',
     bullets: [
-      'Built Lightning Web Components (LWC) for scalable UI on the Salesforce platform.',
-      'Integrated external APIs and applied MVC-style patterns for maintainable features.',
+      'Built Lightning Web Components (LWC) for UI automation, reducing manual workflow steps by ~40%.',
+      'Integrated Salesforce APIs for real-time data sync across 3 business modules.',
+      'Applied MVC architecture and reusable component design to build scalable enterprise features.',
+      'Collaborated with a 4-member team to deliver 2 production-ready CRM modules on schedule.',
     ],
+    certificate:
+      'https://drive.google.com/file/d/1m0qVQWCd2hXYnvp2g-qicQYpLE7Vuka2/view',
   },
   {
-    role: 'Intern',
-    company: 'Ordnance Factory Board',
+    role: 'Web Developer Intern',
+    company: 'Ordnance Factory Board, Ministry of Defence',
     period: 'Jul 2024 – Aug 2024',
     bullets: [
-      'Developed an archival system using HTML, CSS, JavaScript, and PHP.',
-      'Automated PDF generation workflows and improved data accessibility for stakeholders.',
+      'Developed a web-based archival system using HTML, CSS, JavaScript, and PHP, digitizing 500+ employee records.',
+      'Automated PDF generation, reducing manual document processing time by approximately 60%.',
+      'Deployed system on a secure private server with role-based access control for data integrity.',
+      'Improved record retrieval speed, enabling staff to access files in under 10 seconds vs. manual search.',
     ],
+    certificate:
+      'https://drive.google.com/file/d/15SdgASIP6XHu2aynfEbPNBucUmkZlA3O/view',
   },
 ]
 

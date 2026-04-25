@@ -23,6 +23,16 @@ export function Experience({ sectionIndex = '03' }) {
               <span className="font-mono text-sm text-zinc-300/90">{job.period}</span>
             </div>
             <p className="mt-1 font-mono text-sm text-zinc-400">{job.company}</p>
+            {job.certificate ? (
+              <a
+                href={job.certificate}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block font-mono text-xs text-zinc-300 underline decoration-zinc-500 underline-offset-4 transition hover:text-white"
+              >
+                [Certificate]
+              </a>
+            ) : null}
             <ul className="mt-4 list-inside list-disc space-y-2 text-zinc-400">
               {job.bullets.map((b) => (
                 <li key={b.slice(0, 40)} className="leading-relaxed">
