@@ -95,7 +95,6 @@ export function Projects() {
           {filtered.map((project, idx) => {
             const ghUrl = resolvedGithubUrl(project)
             const showLive = project.live && !project.livePlaceholder
-            const showLivePlaceholder = project.livePlaceholder && !project.live
 
             return (
               <motion.article
@@ -147,14 +146,8 @@ export function Projects() {
                       className="inline-flex items-center gap-2 text-sm text-zinc-200 transition hover:text-white"
                     >
                       <FaExternalLinkAlt className="h-3.5 w-3.5 shrink-0" />
-                      {project.liveLabel || 'Live'}
+                      Live
                     </a>
-                  ) : null}
-                  {showLivePlaceholder ? (
-                    <span className="inline-flex items-center gap-2 text-sm text-zinc-400">
-                      <FaExternalLinkAlt className="h-3.5 w-3.5 shrink-0" />
-                      Add your link here — Live
-                    </span>
                   ) : null}
                 </div>
               </motion.article>

@@ -25,7 +25,7 @@ export const NAV_LINKS = [
 export const ABOUT = {
   paragraphs: [
     "I'm a B.Tech student at Graphic Era Deemed University (2022–2026), passionate about turning ideas into reliable software.",
-    'I focus on data structures, modern web development, and problem solving — with 200+ LeetCode problems solved — plus hands-on experience in full-stack development and cloud fundamentals.',
+    'I focus on data structures, modern web development, and problem solving — with 200+ LeetCode problems solved — along with hands-on experience in Java, Node.js, Spring Boot, Express.js, full-stack development, and cloud fundamentals.',
   ],
 }
 
