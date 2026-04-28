@@ -1,6 +1,6 @@
 # Adarsh Gupta — Portfolio
 
-Personal developer portfolio built with **Vite**, **React**, **Tailwind CSS**, and **Framer Motion**.
+Personal developer portfolio built with **Vite**, **React**, **Tailwind CSS**, and **Framer Motion**
 
 ## Scripts
 
