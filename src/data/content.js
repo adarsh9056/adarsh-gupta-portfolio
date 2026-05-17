@@ -102,7 +102,61 @@ export const PROJECT_FILTERS = [
   { id: 'tools', label: 'Tools' },
 ]
 
+/** Repos excluded from auto-import in Projects (portfolio, profile, duplicates, sandboxes). */
+export const GITHUB_EXCLUDED_REPOS = new Set([
+  'adarsh-gupta-portfolio',
+  'adarsh9056',
+  'test-git',
+  'Code-Collaboration',
+  'Code_Collab',
+  'Codecollab_AI',
+])
+
 export const PROJECTS = [
+  {
+    id: 'codecollab-ai',
+    title: 'CodeCollab AI',
+    description:
+      'Real-time collaborative coding platform for DSA practice and mock interviews — live code sync, WebRTC audio, Judge0 execution, and AI-assisted code analysis.',
+    tech: ['React', 'Node.js', 'Socket.IO', 'MongoDB', 'Judge0'],
+    category: 'fullstack',
+    github: 'https://github.com/adarsh9056/AI_codecollab',
+    live: 'https://frontend-ten-lyart-60.vercel.app',
+    liveLabel: 'Live Demo',
+  },
+  {
+    id: 'microservices-ecommerce',
+    title: 'E-Commerce Microservices Platform',
+    description:
+      'Event-driven microservices architecture with API gateway, Eureka discovery, Kafka lifecycle events, isolated MySQL per service, and Redis-cached product reads.',
+    tech: ['Java', 'Spring Boot', 'Spring Cloud', 'Kafka', 'Docker'],
+    category: 'java-spring',
+    github: 'https://github.com/adarsh9056/Microservices-E-Commerce-Platform',
+    live: null,
+    livePlaceholder: true,
+  },
+  {
+    id: 'online-code-judge',
+    title: 'Online Code Judge System',
+    description:
+      'Production-oriented code judge with Spring Boot API, React/Vite frontend, Judge0 execution, Redis rate limiting, and Railway/Vercel deployment guides.',
+    tech: ['Spring Boot', 'React', 'MySQL', 'Redis', 'Judge0'],
+    category: 'java-spring',
+    github: 'https://github.com/adarsh9056/Online-Code-Judge-System',
+    live: null,
+    livePlaceholder: true,
+  },
+  {
+    id: 'team-task-manager',
+    title: 'Team Task Manager',
+    description:
+      'Multi-tenant task manager with JWT auth, project membership roles, admin-only member management, and assignee workflows deployed on Railway.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Prisma', 'JWT'],
+    category: 'fullstack',
+    github: 'https://github.com/adarsh9056/team-task-manager',
+    live: 'https://zonal-essence-production-3a8e.up.railway.app',
+    liveLabel: 'Live Demo',
+  },
   {
     id: 'service-sphere-ai-crm',
     title: 'ServiceSphere AI CRM',
@@ -131,7 +185,7 @@ export const PROJECTS = [
     tech: ['Python', 'FastAPI', 'scikit-learn', 'XGBoost', 'RAG'],
     category: 'ml',
     github: 'https://github.com/adarsh9056/AI_based_tractor-predictive-maintenance',
-    live: 'https://ai-based-tractor-predictive-mainten.vercel.app/',
+    live: 'https://ai-based-tractor-predictive-mainten.vercel.app',
     liveLabel: 'Live Demo',
   },
   {
@@ -164,10 +218,21 @@ export const PROJECTS = [
     liveLabel: 'Live Demo',
   },
   {
+    id: 'email-verifier',
+    title: 'Email Verification Module',
+    description:
+      'Node.js SMTP-based email verifier with syntax checks and deliverability hints — returns structured valid/invalid/unknown results for integration into auth flows.',
+    tech: ['Node.js', 'SMTP', 'JavaScript'],
+    category: 'tools',
+    github: 'https://github.com/adarsh9056/email-verifier',
+    live: null,
+    livePlaceholder: true,
+  },
+  {
     id: 'interactive-recipe-finder',
     title: 'Interactive Recipe Finder',
     description:
-      'Ingredient-based recipe search with match scoring, responsive UI, and modal recipe details — static frontend using HTML, CSS, JavaScript, and JSON data.',
+      'Search and filter recipes by ingredients, cuisine, and dietary preferences with dynamic results, responsive UI, and real-time suggestions.',
     tech: ['HTML', 'CSS', 'JavaScript', 'JSON'],
     category: 'web',
     github: 'https://github.com/adarsh9056/Interactive-Recipe-Finder',
@@ -219,25 +284,24 @@ export const PROJECTS = [
     livePlaceholder: true,
   },
   {
-    id: 'ezeagro',
-    title: 'EzeAgro',
-    description:
-      'IoT-enabled smart farming solution — monitoring and automation to support crops; project work cited reduced locust impact by up to 50%.',
-    tech: ['IoT', 'Cloud', 'Sensors', 'Data Pipeline'],
-    category: 'iot',
-    github: 'https://github.com/adarsh9056',
-    live: null,
-    livePlaceholder: true,
-  },
-  {
     id: 'dead-code-removal',
     title: 'Dead Code Removal Tool',
     description:
       'Static analysis pipeline combining a Lex & Yacc-based parser with a Node.js UI to identify and visualize removable dead code.',
     tech: ['Lex', 'Yacc', 'Node.js', 'Parsing'],
     category: 'tools',
-    github: 'https://github.com/adarsh9056',
-    githubLabel: 'GitHub Profile',
+    github: 'https://github.com/adarsh9056/deadCodeRemoval',
+    live: null,
+    livePlaceholder: true,
+  },
+  {
+    id: 'ezeagro',
+    title: 'EzeAgro',
+    description:
+      'IoT-enabled smart farming solution — monitoring and automation to support crops; project work cited reduced locust impact by up to 50%.',
+    tech: ['IoT', 'Cloud', 'Sensors', 'Data Pipeline'],
+    category: 'iot',
+    github: null,
     live: null,
     livePlaceholder: true,
   },

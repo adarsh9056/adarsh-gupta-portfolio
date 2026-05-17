@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { SectionTitle } from './SectionTitle'
-import { PROJECTS, PROJECT_FILTERS } from '../data/content'
+import { PROJECTS, PROJECT_FILTERS, GITHUB_EXCLUDED_REPOS } from '../data/content'
 import { useGitHubRepos } from '../hooks/useGitHubRepos'
 
 export function Projects() {
@@ -26,13 +26,43 @@ export function Projects() {
     return name.toLowerCase()
   }
 
+  const repoByName = useMemo(() => {
+    const map = new Map()
+    for (const repo of repos) {
+      map.set(repo.name.toLowerCase(), repo)
+    }
+    return map
+  }, [repos])
+
   const allProjects = useMemo(() => {
+    const curatedWithGithubMeta = PROJECTS.map((project) => {
+      const repoKey = repoNameFromUrl(project.github)
+      const repo = repoKey ? repoByName.get(repoKey) : null
+      if (!repo) return project
+
+      return {
+        ...project,
+        description: project.description || repo.description || project.description,
+        live:
+          project.live ||
+          (project.livePlaceholder ? null : repo.homepage) ||
+          repo.homepage ||
+          project.live,
+      }
+    })
+
     const existingRepoNames = new Set(
-      PROJECTS.map((project) => repoNameFromUrl(project.github)).filter(Boolean),
+      curatedWithGithubMeta
+        .map((project) => repoNameFromUrl(project.github))
+        .filter(Boolean),
     )
 
     const githubOnlyProjects = repos
-      .filter((repo) => !existingRepoNames.has(repo.name.toLowerCase()))
+      .filter(
+        (repo) =>
+          !existingRepoNames.has(repo.name.toLowerCase()) &&
+          !GITHUB_EXCLUDED_REPOS.has(repo.name),
+      )
       .map((repo) => ({
         id: `github-${repo.name.toLowerCase()}`,
         title: repo.name.replace(/[-_]/g, ' '),
@@ -44,8 +74,8 @@ export function Projects() {
         liveLabel: 'Live Demo',
       }))
 
-    return [...PROJECTS, ...githubOnlyProjects]
-  }, [repos])
+    return [...curatedWithGithubMeta, ...githubOnlyProjects]
+  }, [repos, repoByName])
 
   const filtered = useMemo(() => {
     if (filter === 'all') return allProjects

@@ -22,14 +22,16 @@ export function useGitHubRepos() {
       .then((data) => {
         if (!cancelled && Array.isArray(data)) {
           setRepos(
-            data.map((r) => ({
-              name: r.name,
-              htmlUrl: r.html_url,
-              description: r.description,
-              homepage: r.homepage,
-              language: r.language,
-              pushedAt: r.pushed_at,
-            })),
+            data
+              .filter((r) => !r.fork)
+              .map((r) => ({
+                name: r.name,
+                htmlUrl: r.html_url,
+                description: r.description,
+                homepage: r.homepage || null,
+                language: r.language,
+                pushedAt: r.pushed_at,
+              })),
           )
         }
       })
